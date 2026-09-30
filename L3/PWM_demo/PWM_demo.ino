@@ -12,23 +12,39 @@ Date:
 
 ----------------------------------------------------------*/ 
 // GPIOs
-  const uint8_t SW1 = 32;
-  const uint8_t SW2 = 33;
+ // GPIOs
+const uint8_t LED = 32; // pin no.
 
-  bool SW1_state = 0
-  bool SW2_state = 0
-//PWM Parameters
-const uint16_t FREQ   = 5000;
-const uint8_t   RES   = 8;
-int            bright = 0;
-int           t_delay = 10;
-int           fade    = 5;
+// PWM parameters
+const uint16_t FREQ = 5000; 
+const uint8_t RES = 8;
+int bright = 0;
+int t_delay = 10;
+int fade = 5;
 
-void setup() { 
- pinMode(SW1,INPUT);
- pinMode(SW1,INPUT);
+void setup() {
+  // put your setup code here, to run once:
+  ledcAttach(LED, FREQ, RES);
 }
 
 void loop() {
-    SW1_state = digitalRead(SW1;)
+
+  /* for(; bright<255; bright+=5) {
+    ledcWrite(LED, bright);
+    delay(10);
+  }
+
+  for(; bright>0; bright-=5) {
+    ledcWrite(LED, bright);
+    delay(10);
+  } */
+
+  ledcWrite(LED, bright);
+  bright += fade;
+
+  if(bright >= 255 || bright <= 0) {
+    fade = -fade; 
+  }
+
+  delay(10);
 }

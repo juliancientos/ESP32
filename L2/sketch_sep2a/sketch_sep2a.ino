@@ -21,8 +21,8 @@ Date:
   int SW2 = 19;
 
 void setup() {
-  for (int i=0 ; i<NUM_PINS; i++){
-    pinMode(LED[i], OUTPUT);
+    for (int i=0 ; i<NUM_PINS; i++){
+      pinMode(LED[i], OUTPUT);
   }
   pinMode(SW1, INPUT_PULLUP);
   pinMode(SW2, INPUT_PULLUP);
