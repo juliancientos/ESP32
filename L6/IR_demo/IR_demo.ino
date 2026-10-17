@@ -1,3 +1,5 @@
+// -- DISPLAY VOLTAGE ON TERMINAL --
+
 const int OUT = 2;          // IR Proximity Sensor pin
 const int ledPin = 13;      // LED pin
 
@@ -7,8 +9,8 @@ int lastSensorState = HIGH; // Previous sensor reading to track state changes
 
 void setup() {
   Serial.begin(9600);
-  pinMode(ledPin, OUTPUT);
-  pinMode(OUT, INPUT);
+  pinMode(ledPin,OUTPUT);
+  pinMode(OUT,INPUT);
 }
 
 void loop() {
@@ -27,3 +29,5 @@ void loop() {
 
   lastSensorState = SensorState;
 }
+void segSetup();
+  if 
