@@ -29,5 +29,4 @@ void loop() {
 
   lastSensorState = SensorState;
 }
-void segSetup();
-  if 
+
